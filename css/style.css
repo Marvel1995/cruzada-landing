@@ -1,0 +1,306 @@
+/* --- Estilos Generales --- */
+:root {
+    --color-primary: #004d99; /* Azul oscuro */
+    --color-secondary: #00aaff; /* Azul claro */
+    --color-accent: #ffcc00; /* Dorado/Amarillo para resaltar */
+    --color-text-light: #ffffff;
+    --color-text-dark: #333333;
+    --gradient-blue: linear-gradient(180deg, rgba(0,77,153,0.8) 0%, rgba(0,170,255,0.6) 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Oswald', sans-serif; /* Fuente principal */
+    background-color: #f0f0f5;
+    color: var(--color-text-dark);
+}
+
+/* --- Estilos para la SECCIÓN HERO (Fondo Superior) --- */
+
+.hero-section {
+    position: relative;
+    height: 100vh;
+    /* --- MODIFICACIÓN CLAVE AQUÍ --- */
+    background-image: 
+        /* 1. Fondo superior (Familia) - Se mantiene */
+        url('../img/fondo-edificio.png'), 
+        /* 2. Fondo secundario (Edificio) - Asegúrate que la ruta sea correcta */
+        url('../img/fondo-familia.jpg');
+    background-size: cover, cover;
+    background-position: top center, center 50%; /* Ajusta si es necesario */
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alineación superior */
+    align-items: center;
+    padding-top: 50px;
+    z-index: 1;
+    overflow: hidden; /* Para que el contenido no se salga */
+}
+
+/* Oscurecimiento/gradiente para que el texto resalte */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Oscurecimiento */
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0.5) 100%);
+    z-index: 2;
+}
+
+.header-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    width: 90%;
+}
+
+/* --- Título Principal --- */
+.main-title {
+    font-family: 'Playfair Display', serif; /* Fuente más elegante para el título */
+    font-size: 3.5rem; /* Tamaño grande para móvil */
+    color: var(--color-text-light);
+    text-shadow: 
+        0 0 10px rgba(0, 170, 255, 0.8), /* Brillo azul */
+        -1px 1px 0 #333,
+        -2px 2px 0 #666,
+        -3px 3px 0 #999,
+        -4px 4px 0 #bbb; /* Simulación 3D */
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.event-tagline {
+    color: var(--color-text-light);
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+
+
+/* --- Estilos para el CONTADOR --- */
+/* --- Estilos para el CONTADOR --- */
+
+/* Asegura que todos los contenedores flex tengan la misma alineación */
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Alinea los elementos en la parte inferior */
+    color: var(--color-text-light);
+    margin-bottom: 20px;
+}
+
+.countdown-time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 5px;
+}
+
+/* NUEVOS ESTILOS: Aseguran que la columna del separador tenga la misma altura */
+.countdown-time.separator-column {
+    /* La altura de la etiqueta 'label' será su espacio vacío */
+    margin: 0; /* Quita el margen lateral si lo tiene */
+    /* El contenedor flexible del separador se alinea en la parte superior */
+    justify-content: flex-start; 
+}
+
+/* Modifica el estilo del separador para centrarlo visualmente */
+.countdown-time .separator {
+    font-size: 3rem;
+    line-height: 1; /* Esto ayuda a controlar la altura vertical */
+    align-self: center; /* Centra el separador horizontalmente en su columna */
+    /* Ya no necesita margin-bottom si lo alineamos con el label */
+    margin: 0; 
+    padding-bottom: 25px; /* Empuja el separador hacia arriba para alinearlo con los números */
+}
+
+/* Ajusta los números principales */
+.countdown-time .number {
+    font-size: 4rem; 
+    font-weight: 700;
+    line-height: 1;
+    /* ... otros estilos existentes ... */
+}
+
+/* Ajustes para el modo STICKY */
+.countdown-container.is-sticky .separator {
+    font-size: 1.5rem;
+    padding-bottom: 0; /* Quita el padding cuando es sticky */
+    margin-top: 5px; /* Ajuste fino para centrar en el modo sticky */
+}
+
+.info-text p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: var(--color-primary);
+}
+
+.btn-maps {
+    display: inline-block;
+    background-color: var(--color-secondary);
+    color: var(--color-text-light);
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+/* --- 4. SECCIÓN DEL OBISPO --- */
+.obispo-section {
+    background: linear-gradient(180deg, #f0f0f5 0%, #d8e6ff 100%); /* Fondo degradado suave */
+    padding: 50px 20px;
+    text-align: center;
+    overflow: hidden; /* Necesario para la animación de entrada */
+}
+
+.obispo-details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.obispo-image {
+    width: 90%; /* Ajusta el tamaño */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+    /* Estilo de la maqueta: hacer que se vea como en un fondo blanco/claro */
+    background-color: #fff; 
+}
+
+.obispo-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+.obispo-text p {
+    font-size: 1rem;
+    color: var(--color-text-dark);
+}
+
+/* --- 5. FOOTER (Formulario y Contacto) --- */
+.footer-section {
+    background-color: #e6f7ff; /* Color de fondo claro, similar a la maqueta */
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 5px solid var(--color-secondary);
+}
+
+.form-container {
+    margin-bottom: 30px;
+}
+
+.form-container h3 {
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+.form-container p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.prayer-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: var(--color-accent);
+    color: var(--color-text-dark);
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icon {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    border-radius: 50%;
+    background-color: #fff; /* Fondo para los iconos */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilos de icono (usaremos imágenes o íconos SVG/Fuente en un paso posterior) */
+/* Por ahora, solo colores de marcador de posición */
+.whatsapp-icon { background-color: #25D366; }
+.instagram-icon { background-color: #E1306C; }
+.facebook-icon { background-color: #3b5998; }
+.youtube-icon { background-color: #FF0000; }
+/* --- Estilos para la Interactividad --- */
+
+/* Estilo inicial: La imagen del obispo está fuera de la vista (hacia abajo) */
+.obispo-image {
+    /* ... estilos existentes ... */
+    transform: translateY(100px); /* Mover 100px hacia abajo */
+    opacity: 0;
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out; /* Animación suave */
+}
+
+/* Estilo final: La imagen del obispo visible y en su posición */
+.obispo-image.is-visible {
+    transform: translateY(0); /* Volver a la posición normal */
+    opacity: 1;
+}
+
+/* EFECTO STICKY PARA EL CONTADOR */
+
+/* Posicionamiento y estilo cuando está "pegado" a la parte superior */
+.countdown-container.is-sticky {
+    position: fixed; /* Se fija en la ventana */
+    top: 0; /* En la parte superior */
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro semitransparente */
+    padding: 10px 0;
+    z-index: 1000; /* Asegura que esté por encima de todo */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    /* Reajustar tamaño para que sea discreto cuando está fijo */
+    transform: scale(0.8); 
+}
+
+/* Ajustar el tamaño de fuente cuando es sticky */
+.countdown-container.is-sticky .number {
+    font-size: 2rem; 
+}
+.countdown-container.is-sticky .label {
+    font-size: 0.7rem;
+}
+.countdown-container.is-sticky .separator {
+    font-size: 1.5rem;
+}
