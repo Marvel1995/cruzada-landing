@@ -32,7 +32,7 @@ if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
                     `#LibroDeOracion`;
 
     // 3. Crear la URL para la API de Telegram
-    const telegramUrl = `http://googleusercontent.com/api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+    const telegramUrl = `https://googleusercontent.com/api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
     
     const params = {
         chat_id: TELEGRAM_CHAT_ID,
