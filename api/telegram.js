@@ -5,7 +5,7 @@ module.exports = async (req, res) => {
         return res.status(405).send('Method Not Allowed');
     }
 
-    const { nombre, telefono } = req.body;
+    const { nombre, telefono, pedido } = req.body;
 
     if (!nombre || !telefono) {
         return res.status(400).json({ error: 'Nombre y Teléfono son requeridos.' });
@@ -26,10 +26,11 @@ if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
 // ... el resto del código ...
 
     // 2. Formato del mensaje a enviar
-    const message = `✨ **NUEVA PETICIÓN DE ORACIÓN** ✨\n\n` +
-                    `👤 *Nombre:* ${nombre}\n` +
-                    `📞 *Teléfono:* ${telefono}\n\n` +
-                    `#LibroDeOracion`;
+  const message = `✨ **NUEVA PETICIÓN DE ORACIÓN** ✨\n\n` +
+                `👤 *Nombre:* ${nombre}\n` +
+                `📞 *Teléfono:* ${telefono}\n` +
+                `🙏 **Petición:** ${pedido}\n\n` + // <-- ¡Añade esta línea!
+                `#LibroDeOracion`;
 
     // 3. Crear la URL para la API de Telegram
     const telegramUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;

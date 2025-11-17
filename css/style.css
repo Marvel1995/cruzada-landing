@@ -218,13 +218,19 @@ body {
     margin-bottom: 20px;
 }
 
-.prayer-form input {
+/* Busca o añade esta regla en tu archivo CSS */
+#prayer-form input[type="text"],
+#prayer-form input[type="number"],
+#prayer-form textarea { /* <-- Añade 'textarea' aquí */
     width: 100%;
-    padding: 12px;
+    padding: 15px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
+    border: none;
     border-radius: 8px;
+    background-color: #f0f0f0;
     font-size: 1rem;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    resize: vertical; /* Permite al usuario redimensionar solo verticalmente */
 }
 
 .btn-submit {

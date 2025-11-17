@@ -57,11 +57,15 @@
         <div class="form-container">
             <h3>Únete a Nuestro Libro de Oración</h3>
             <p>Déjanos tus datos para en nuestro libro de oración.</p>
-            <form id="prayer-form" class="prayer-form">
-                <input type="text" name="nombre" placeholder="Nombre completo" required>
-                <input type="tel" name="telefono" placeholder="Teléfono" required>
-                <button type="submit" class="btn-submit">Añadir al Libro de Oración</button>
-            </form>
+           <form id="prayer-form">
+    <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required>
+
+    <input type="number" id="telefono" name="telefono" placeholder="Número de teléfono (WhatsApp)" required>
+
+    <textarea id="pedido" name="pedido" placeholder="Escribe tu petición de oración aquí..." rows="4" required></textarea>
+    
+    <button type="submit">Añadir al Libro de Oración</button>
+</form>
         </div>
 
         <div class="social-links">
