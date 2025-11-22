@@ -7,30 +7,32 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
-    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-    <script>
-        window.OneSignal = window.OneSignal || [];
-        OneSignal.push(function() {
-            OneSignal.init({
-                appId: "9e3be94b-2356-4f70-b8c3-82c2bea05858", 
-                notifyButton: {
-                    enable: true, 
-                },
-                welcomeNotification: {
-                    "title": "¡Bienvenido a la Cruzada!",
-                    "message": "Gracias por suscribirte. ¡Te notificaremos para que no te pierdas el evento!",
-                },
-                promptOptions: {
-                    slidedown: {
-                        enabled: true,
-                        actionMessage: "Recibe notificaciones diarias para recordar la Cruzada.",
-                        acceptButtonText: "Sí, quiero recibir recordatorios",
-                        cancelButtonText: "No, gracias"
-                    }
+ <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+    window.OneSignalDeferred = window.OneSignalDeferred || [];
+    OneSignalDeferred.push(async function(OneSignal) {
+        await OneSignal.init({
+            appId: "e39078a9-e3fc-4aa1-8b12-89553bac7459", // Tu nuevo App ID
+            safari_web_id: "web.onesignal.auto.67f7c7cd-fb70-49d1-aa8c-90d60d7056be",
+            notifyButton: {
+                enable: true,
+            },
+            // Añadimos las opciones de bienvenida y prompt que ya teníamos
+            welcomeNotification: {
+                "title": "¡Bienvenido a la Cruzada de Fe y Milagros!",
+                "message": "Gracias por suscribirte. ¡Te notificaremos para que no te pierdas el evento!",
+            },
+            promptOptions: {
+                slidedown: {
+                    enabled: true,
+                    actionMessage: "Recibe notificaciones diarias para recordar la Cruzada.",
+                    acceptButtonText: "Sí, quiero recibir recordatorios",
+                    cancelButtonText: "No, gracias"
                 }
-            });
+            }
         });
-    </script>
+    });
+</script>   
 </head>
 <body>
 
