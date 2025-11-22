@@ -1,75 +1,78 @@
 <!DOCTYPE html>
 <html lang="es">
- <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-<script>
-    window.OneSignal = window.OneSignal || [];
-    OneSignal.push(function() {
-        OneSignal.init({
-            // *** REEMPLAZA EL VALOR DE ESTA LÍNEA CON TU ID REAL ***
-            appId: "9e3be94b-2356-4f70-b8c3-82c2bea05858", 
-            // ********************************************************
-            safari_web_id: "web.onesignal.auto.TU_SAFARI_WEB_ID", // (Opcional si no usas Safari)
-            notifyButton: {
-                enable: true, // Muestra el ícono de campana predeterminado para suscribirse
-            },
-            welcomeNotification: {
-                "title": "¡Bienvenido a la Cruzada!",
-                "message": "Gracias por suscribirte. ¡Te notificaremos para que no te pierdas el evento!",
-            },
-            promptOptions: {
-                slidedown: {
-                    enabled: true,
-                    actionMessage: "Recibe notificaciones diarias para recordar la Cruzada.",
-                    acceptButtonText: "Sí, quiero recibir recordatorios",
-                    cancelButtonText: "No, gracias"
-                }
-            }
-        });
-    });
-</script>
-</head>   
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cruzada del Espíritu Santo</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-</head>
+    
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+    <script>
+        window.OneSignal = window.OneSignal || [];
+        OneSignal.push(function() {
+            OneSignal.init({
+                appId: "9e3be94b-2356-4f70-b8c3-82c2bea05858", 
+                notifyButton: {
+                    enable: true, // Muestra el ícono de campana
+                },
+                welcomeNotification: {
+                    "title": "¡Bienvenido a la Cruzada!",
+                    "message": "Gracias por suscribirte. ¡Te notificaremos para que no te pierdas el evento!",
+                },
+                promptOptions: {
+                    slidedown: {
+                        enabled: true,
+                        actionMessage: "Recibe notificaciones diarias para recordar la Cruzada.",
+                        acceptButtonText: "Sí, quiero recibir recordatorios",
+                        cancelButtonText: "No, gracias"
+                    }
+                }
+            });
+        });
+    </script>
+    </head>
 <body>
 
     <header class="hero-section">
         <div class="header-content">
             <h1 class="main-title">CRUZADA DEL ESPÍRITU SANTO</h1>
-            
-            <div id="countdown" class="countdown-container">
-    <div class="countdown-time">
-        <span id="days" class="number">16</span>
-        <span class="label">Días</span>
-    </div>
-    <div class="countdown-time separator-column"> <span class="separator">:</span>
-    </div>
-    <div class="countdown-time">
-        <span id="hours" class="number">06</span>
-        <span class="label">Horas</span>
-    </div>
-    <div class="countdown-time separator-column"> <span class="separator">:</span>
-    </div>
-    <div class="countdown-time">
-        <span id="minutes" class="number">35</span>
-        <span class="label">Minutos</span>
-    </div>
-    </div>
 
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/VIDEO_ID_AQUI?autoplay=0&controls=1&showinfo=0&rel=0" 
+                    frameborder="0" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <div id="countdown" class="countdown-container">
+                <div class="countdown-time">
+                    <span id="days" class="number">16</span>
+                    <span class="label">Días</span>
+                </div>
+                <div class="countdown-time separator-column"> <span class="separator">:</span> </div>
+                <div class="countdown-time">
+                    <span id="hours" class="number">06</span>
+                    <span class="label">Horas</span>
+                </div>
+                <div class="countdown-time separator-column"> <span class="separator">:</span> </div>
+                <div class="countdown-time">
+                    <span id="minutes" class="number">35</span>
+                    <span class="label">Minutos</span>
+                </div>
+            </div>
+            
             <p class="event-tagline">¡UN EVENTO DE FE, PODER Y MILAGROS!</p>
         </div>
-    </header>
+    </header> 
 
     <section class="info-maps-section">
-    <div class="info-text">
-        <p>Un evento que marcará tu vida para siempre</p>
-    </div>
-    <a href="https://maps.app.goo.gl/SHgpcksXFDgmRdDt7" target="_blank" id="maps-button" class="btn-maps">Ver Ubicación en Mapa</a>
-</section>
+        <div class="info-text">
+            <p>Un evento que marcará tu vida para siempre</p>
+        </div>
+        <a href="https://maps.app.goo.gl/SHgpcksXFDgmRdDt7" target="_blank" id="maps-button" class="btn-maps">Ver Ubicación en Mapa</a>
+    </section>
 
     <section class="obispo-section">
         <div class="obispo-details-container">
@@ -85,15 +88,12 @@
         <div class="form-container">
             <h3>Únete a Nuestro Libro de Oración</h3>
             <p>Déjanos tus datos para en nuestro libro de oración.</p>
-           <form id="prayer-form">
-    <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required>
-
-    <input type="number" id="telefono" name="telefono" placeholder="Número de teléfono (WhatsApp)" required>
-
-    <textarea id="pedido" name="pedido" placeholder="Escribe tu petición de oración aquí..." rows="4" required></textarea>
-    
-    <button type="submit">Añadir al Libro de Oración</button>
-</form>
+            <form id="prayer-form">
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required>
+                <input type="number" id="telefono" name="telefono" placeholder="Número de teléfono (WhatsApp)" required>
+                <textarea id="pedido" name="pedido" placeholder="Escribe tu petición de oración aquí..." rows="4" required></textarea>
+                <button type="submit">Añadir al Libro de Oración</button>
+            </form>
         </div>
 
         <div class="social-links">
@@ -103,5 +103,6 @@
         </div>
     </footer>
 
-    <script src="js/script.js"></script> </body>
+    <script src="js/script.js"></script> 
+</body>
 </html>
