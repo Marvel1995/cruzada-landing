@@ -10,14 +10,13 @@ function updateCountdown() {
     const daysEl = document.getElementById('days');
     const hoursEl = document.getElementById('hours');
     const minutesEl = document.getElementById('minutes');
-    // const secondsEl = document.getElementById('seconds'); <-- ¡ELIMINADO!
+    const secondsEl = document.getElementById('seconds');
 
     // Cálculos de tiempo
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    // const seconds = Math.floor((distance % (1000 * 60)) / 1000); <-- ¡ELIMINADO!
-
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
     // Formato: Añadir un cero delante si el número es menor a 10
     const formatTime = (time) => (time < 10 ? `0${time}` : time);
 
@@ -27,14 +26,14 @@ function updateCountdown() {
         daysEl.innerHTML = "00";
         hoursEl.innerHTML = "00";
         minutesEl.innerHTML = "00";
-        // secondsEl.innerHTML = "00"; <-- ¡ELIMINADO!
+        secondsEl.innerHTML = "00";
         document.querySelector('.event-tagline').innerHTML = "¡EL EVENTO ESTÁ SUCEDIENDO AHORA!";
     } else {
         // Actualizar el HTML
         daysEl.innerHTML = formatTime(days);
         hoursEl.innerHTML = formatTime(hours);
         minutesEl.innerHTML = formatTime(minutes);
-        // secondsEl.innerHTML = formatTime(seconds); <-- ¡ELIMINADO!
+        secondsEl.innerHTML = formatTime(seconds);
     }
 }
 

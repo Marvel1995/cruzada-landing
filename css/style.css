@@ -85,8 +85,6 @@ body {
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
 }
 
-
-/* --- Estilos para el CONTADOR --- */
 /* --- Estilos para el CONTADOR --- */
 
 /* Asegura que todos los contenedores flex tengan la misma alineación */
@@ -265,20 +263,38 @@ body {
     transition: background-color 0.3s;
 }
 
-.social-links {
-    display: flex;
+./* Estilo base para los contenedores de redes sociales */
+.social-links a {
+    display: inline-flex;
     justify-content: center;
-    gap: 15px;
+    align-items: center;
+    width: 50px; /* Tamaño del ícono */
+    height: 50px;
+    border-radius: 50%; /* Lo hace circular */
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 24px; /* Tamaño del ícono */
+    transition: transform 0.3s ease;
 }
 
-.social-icon {
-    display: block;
-    width: 40px;
-    height: 40px;
-    background-size: cover;
-    border-radius: 50%;
-    background-color: #fff; /* Fondo para los iconos */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+.social-links a:hover {
+    transform: scale(1.1);
+}
+
+/* Colores específicos para los íconos */
+.social-links .fa-whatsapp {
+    color: #25d366; /* Verde WhatsApp */
+    background-color: white;
+}
+
+.social-links .fa-facebook-f {
+    color: #1877f2; /* Azul Facebook */
+    background-color: white;
+}
+
+.social-links .fa-youtube {
+    color: #ff0000; /* Rojo YouTube */
+    background-color: white;
 }
 
 /* Estilos de icono (usaremos imágenes o íconos SVG/Fuente en un paso posterior) */
@@ -328,4 +344,25 @@ body {
 }
 .countdown-container.is-sticky .separator {
     font-size: 1.5rem;
+}
+
+/* Estilo del botón 'Añadir al Libro de Oración' */
+#prayer-form button {
+    /* Nuevo estilo: Azul y más grande */
+    background-color: #007bff; /* Un azul estándar y profesional */
+    color: white; /* Letras blancas */
+    border: none;
+    padding: 15px 30px; /* Hace el botón más grande vertical y horizontalmente */
+    font-size: 1.2em; /* Fuente más grande */
+    font-weight: bold;
+    border-radius: 8px; /* Bordes redondeados */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Ocupa todo el ancho del formulario */
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#prayer-form button:hover {
+    background-color: #0056b3; /* Un azul un poco más oscuro al pasar el ratón */
 }

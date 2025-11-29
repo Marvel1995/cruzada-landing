@@ -6,6 +6,7 @@
     <title>Cruzada del Espíritu Santo</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
  <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
 <script>
@@ -41,12 +42,12 @@
             <h1 class="main-title">CRUZADA DEL ESPÍRITU SANTO</h1>
 
             <div class="video-container">
-                <iframe 
-                    src="https://www.youtube.com/embed/gF8yVEkDZBc?autoplay=0&controls=1&showinfo=0&rel=0" 
-                    frameborder="0" 
-                    allowfullscreen>
-                </iframe>
-            </div>
+    <iframe 
+        src="https://www.youtube.com/embed/bkgkm3PK2tA?autoplay=0&controls=1&showinfo=0&rel=0" 
+        frameborder="0" 
+        allowfullscreen>
+         </iframe>
+    </div>
 
             <div id="countdown" class="countdown-container">
                 <div class="countdown-time">
@@ -63,6 +64,9 @@
                     <span id="minutes" class="number">35</span>
                     <span class="label">Minutos</span>
                 </div>
+                <div class="countdown-time separator-column"> <span class="separator">:</span> </div> <div class="countdown-time"> <span id="seconds" class="number">00</span> 
+        <span class="label">Segundos</span>
+    </div>
             </div>
             
             <p class="event-tagline">¡UN EVENTO DE FE, PODER Y MILAGROS!</p>
@@ -94,15 +98,21 @@
                 <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required>
                 <input type="number" id="telefono" name="telefono" placeholder="Número de teléfono (WhatsApp)" required>
                 <textarea id="pedido" name="pedido" placeholder="Escribe tu petición de oración aquí..." rows="4" required></textarea>
-                <button type="submit">Añadir al Libro de Oración</button>
+                <button type="submit">Enviar al Libro de Oración</button>
             </form>
         </div>
 
-        <div class="social-links">
-            <a href="https://wa.me/3324082042" target="_blank" class="social-icon whatsapp-icon"></a>
-            <a href="https://www.facebook.com/CentroDeAyudaUniversalGuadalajara" target="_blank" class="social-icon facebook-icon"></a>
-            <a href="https://www.youtube.com/@ObispoFranklinSanches" target="_blank" class="social-icon youtube-icon"></a>
-        </div>
+       <div class="social-links">
+    <a href="https://wa.me/3324082042" target="_blank" class="social-icon">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="https://www.facebook.com/CentroDeAyudaUniversalGuadalajara" target="_blank" class="social-icon">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://www.youtube.com/@ObispoFranklinSanches" target="_blank" class="social-icon">
+        <i class="fab fa-youtube"></i>
+    </a>
+</div>
     </footer>
 
     <script src="js/script.js"></script> 
